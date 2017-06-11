@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2B85BF1EEB3386000D1CBE /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B85BE1EEB3386000D1CBE /* Plane.m */; };
 		4D4812411EEA0522007EBA5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4812401EEA0522007EBA5A /* AppDelegate.m */; };
 		4D4812461EEA0522007EBA5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4812451EEA0522007EBA5A /* ViewController.m */; };
 		4D4812491EEA0522007EBA5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4812471EEA0522007EBA5A /* Main.storyboard */; };
 		4D48124B1EEA0522007EBA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D48124A1EEA0522007EBA5A /* Assets.xcassets */; };
 		4D48124E1EEA0522007EBA5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D48124C1EEA0522007EBA5A /* LaunchScreen.storyboard */; };
 		4D4812511EEA0522007EBA5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4812501EEA0522007EBA5A /* main.m */; };
+		4D5F10521EEC7F40000C510C /* tron_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F10511EEC7F40000C510C /* tron_grid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D2B85BE1EEB3386000D1CBE /* Plane.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
+		4D2B85C01EEB33A5000D1CBE /* Plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
 		4D48123C1EEA0522007EBA5A /* arkit-by-example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "arkit-by-example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D48123F1EEA0522007EBA5A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D4812401EEA0522007EBA5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -26,6 +30,7 @@
 		4D48124D1EEA0522007EBA5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D48124F1EEA0522007EBA5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D4812501EEA0522007EBA5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4D5F10511EEC7F40000C510C /* tron_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tron_grid.png; path = ../../../Desktop/tron_grid.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +69,12 @@
 				4D4812451EEA0522007EBA5A /* ViewController.m */,
 				4D4812471EEA0522007EBA5A /* Main.storyboard */,
 				4D48124A1EEA0522007EBA5A /* Assets.xcassets */,
+				4D5F10511EEC7F40000C510C /* tron_grid.png */,
 				4D48124C1EEA0522007EBA5A /* LaunchScreen.storyboard */,
 				4D48124F1EEA0522007EBA5A /* Info.plist */,
 				4D4812501EEA0522007EBA5A /* main.m */,
+				4D2B85C01EEB33A5000D1CBE /* Plane.h */,
+				4D2B85BE1EEB3386000D1CBE /* Plane.m */,
 			);
 			path = "arkit-by-example";
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5F10521EEC7F40000C510C /* tron_grid.png in Resources */,
 				4D48124E1EEA0522007EBA5A /* LaunchScreen.storyboard in Resources */,
 				4D48124B1EEA0522007EBA5A /* Assets.xcassets in Resources */,
 				4D4812491EEA0522007EBA5A /* Main.storyboard in Resources */,
@@ -143,6 +152,7 @@
 			files = (
 				4D4812461EEA0522007EBA5A /* ViewController.m in Sources */,
 				4D4812511EEA0522007EBA5A /* main.m in Sources */,
+				4D2B85BF1EEB3386000D1CBE /* Plane.m in Sources */,
 				4D4812411EEA0522007EBA5A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,7 +283,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G8QGX59NPW;
 				INFOPLIST_FILE = "arkit-by-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ruanestudios.arkit-by-example";
@@ -286,7 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = G8QGX59NPW;
 				INFOPLIST_FILE = "arkit-by-example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ruanestudios.arkit-by-example";
