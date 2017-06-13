@@ -10,9 +10,10 @@
 #import <ARKit/ARKit.h>
 
 @interface Plane : SCNNode
-- (instancetype)initWithAnchor:(ARPlaneAnchor *)anchor;
+- (instancetype)initWithAnchor:(ARPlaneAnchor *)anchor isHidden:(BOOL)hidden;
 - (void)update:(ARPlaneAnchor *)anchor;
 - (void)setTextureScale;
+- (void)hide;
 @property (nonatomic,retain) ARPlaneAnchor *anchor;
-@property (nonatomic, retain) SCNPlane *planeGeometry;
+@property (nonatomic, retain) SCNBox *planeGeometry;
 @end
