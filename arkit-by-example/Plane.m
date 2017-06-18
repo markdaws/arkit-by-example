@@ -7,10 +7,13 @@
 //
 
 #import "Plane.h"
+#import "PBRMaterial.h"
+
+static int currentMaterialIndex = 0;
 
 @implementation Plane
 
-- (instancetype)initWithAnchor:(ARPlaneAnchor *)anchor isHidden:(BOOL)hidden {
+- (instancetype)initWithAnchor:(ARPlaneAnchor *)anchor isHidden:(BOOL)hidden withMaterial:(SCNMaterial *)material {
   self = [super init];
   
   self.anchor = anchor;
@@ -25,12 +28,6 @@
   float planeHeight = 0.01;
   
   self.planeGeometry = [SCNBox boxWithWidth:width height:planeHeight length:length chamferRadius:0];
-  
-  // Instead of just visualizing the grid as a gray plane, we will render
-  // it in some Tron style colours.
-  SCNMaterial *material = [SCNMaterial new];
-  UIImage *img = [UIImage imageNamed:@"./tron_grid.png"];
-  material.diffuse.contents = img;
   
   // Since we are using a cube, we only want to render the tron grid
   // on the top face, make the other sides transparent
@@ -58,6 +55,47 @@
   return self;
 }
 
+- (void)changeMaterial {
+  // Static, all future cubes use this to have the same material
+  currentMaterialIndex = (currentMaterialIndex + 1) % 5;
+  
+  SCNMaterial *material = [Plane currentMaterial];
+  SCNMaterial *transparentMaterial = [SCNMaterial new];
+  transparentMaterial.diffuse.contents = [UIColor colorWithWhite:1.0 alpha:0.0];
+  if (material == nil) {
+    material = transparentMaterial;
+  }
+  SCNMatrix4 transform = self.planeGeometry.materials[4].diffuse.contentsTransform;
+  material.diffuse.contentsTransform = transform;
+  material.roughness.contentsTransform = transform;
+  material.metalness.contentsTransform = transform;
+  material.normal.contentsTransform = transform;
+  self.planeGeometry.materials = @[transparentMaterial, transparentMaterial, transparentMaterial, transparentMaterial, material, transparentMaterial];
+}
+
++ (SCNMaterial *)currentMaterial {
+  NSString *materialName;
+  switch(currentMaterialIndex) {
+    case 0:
+      materialName = @"tron";
+      break;
+    case 1:
+      materialName = @"oakfloor2";
+      break;
+    case 2:
+      materialName = @"sculptedfloorboards";
+      break;
+    case 3:
+      materialName = @"granitesmooth";
+      break;
+    case 4:
+      // planes will be transparent
+      return nil;
+      break;
+  }
+  return [[PBRMaterial materialNamed:materialName] copy];
+}
+
 - (void)update:(ARPlaneAnchor *)anchor {
   // As the user moves around the extend and location of the plane
   // may be updated. We need to update our 3D geometry to match the
@@ -72,7 +110,6 @@
   self.position = SCNVector3Make(anchor.center.x, 0, anchor.center.z);
   
   SCNNode *node = [self.childNodes firstObject];
-  //self.physicsBody = nil;
   node.physicsBody = [SCNPhysicsBody
                       bodyWithType:SCNPhysicsBodyTypeKinematic
                       shape: [SCNPhysicsShape shapeWithGeometry:self.planeGeometry options:nil]];
@@ -88,9 +125,13 @@
   // grid is less than 1 unit, we don't want to squash the texture to fit, so
   // scaling updates the texture co-ordinates to crop the texture in that case
   SCNMaterial *material = self.planeGeometry.materials[4];
-  material.diffuse.contentsTransform = SCNMatrix4MakeScale(width, height, 1);
-  material.diffuse.wrapS = SCNWrapModeRepeat;
-  material.diffuse.wrapT = SCNWrapModeRepeat;
+  //NSLog(@"width: %f, height: %f", width, height);
+  float scaleFactor = 1;
+  SCNMatrix4 m = SCNMatrix4MakeScale(width * scaleFactor, height * scaleFactor, 1);
+  material.diffuse.contentsTransform = m;
+  material.roughness.contentsTransform = m;
+  material.metalness.contentsTransform = m;
+  material.normal.contentsTransform = m;
 }
 
 - (void)hide {

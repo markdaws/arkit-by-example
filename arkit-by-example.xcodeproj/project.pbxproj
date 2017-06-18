@@ -10,11 +10,14 @@
 		4D2B85BF1EEB3386000D1CBE /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2B85BE1EEB3386000D1CBE /* Plane.m */; };
 		4D4812411EEA0522007EBA5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4812401EEA0522007EBA5A /* AppDelegate.m */; };
 		4D4812461EEA0522007EBA5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4812451EEA0522007EBA5A /* ViewController.m */; };
-		4D4812491EEA0522007EBA5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D4812471EEA0522007EBA5A /* Main.storyboard */; };
-		4D48124B1EEA0522007EBA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D48124A1EEA0522007EBA5A /* Assets.xcassets */; };
 		4D48124E1EEA0522007EBA5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D48124C1EEA0522007EBA5A /* LaunchScreen.storyboard */; };
 		4D4812511EEA0522007EBA5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4812501EEA0522007EBA5A /* main.m */; };
-		4D5F10521EEC7F40000C510C /* tron_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F10511EEC7F40000C510C /* tron_grid.png */; };
+		4D5F12031EF34368000C510C /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5F12021EF34368000C510C /* Cube.m */; };
+		4D5F12061EF36229000C510C /* PBRMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5F12051EF36229000C510C /* PBRMaterial.m */; };
+		4D5F12091EF39E20000C510C /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D5F12081EF39E20000C510C /* ConfigViewController.m */; };
+		4DCBF0E21EF40DE000DDF979 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCBF0E11EF40DE000DDF979 /* Config.m */; };
+		4DCBF0E61EF411AE00DDF979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DCBF0E51EF4118000DDF979 /* Main.storyboard */; };
+		4DCBF0E81EF4324900DDF979 /* Assets.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DCBF0E71EF4324900DDF979 /* Assets.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,12 +28,20 @@
 		4D4812401EEA0522007EBA5A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4D4812441EEA0522007EBA5A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		4D4812451EEA0522007EBA5A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4D4812481EEA0522007EBA5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4D48124A1EEA0522007EBA5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D48124D1EEA0522007EBA5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D48124F1EEA0522007EBA5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D4812501EEA0522007EBA5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4D5F10511EEC7F40000C510C /* tron_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tron_grid.png; path = ../../../Desktop/tron_grid.png; sourceTree = "<group>"; };
+		4D5F12011EF34323000C510C /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
+		4D5F12021EF34368000C510C /* Cube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cube.m; sourceTree = "<group>"; };
+		4D5F12041EF34544000C510C /* CollisionCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollisionCategory.h; sourceTree = "<group>"; };
+		4D5F12051EF36229000C510C /* PBRMaterial.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PBRMaterial.m; sourceTree = "<group>"; };
+		4D5F12071EF36380000C510C /* PBRMaterial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PBRMaterial.h; sourceTree = "<group>"; };
+		4D5F12081EF39E20000C510C /* ConfigViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		4DCBF0E01EF40D6800DDF979 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		4DCBF0E11EF40DE000DDF979 /* Config.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
+		4DCBF0E51EF4118000DDF979 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4DCBF0E71EF4324900DDF979 /* Assets.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Assets.scnassets; sourceTree = "<group>"; };
+		4DEC600D1EF3B8280094E3CD /* ConfigViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +78,22 @@
 				4D4812401EEA0522007EBA5A /* AppDelegate.m */,
 				4D4812441EEA0522007EBA5A /* ViewController.h */,
 				4D4812451EEA0522007EBA5A /* ViewController.m */,
-				4D4812471EEA0522007EBA5A /* Main.storyboard */,
-				4D48124A1EEA0522007EBA5A /* Assets.xcassets */,
-				4D5F10511EEC7F40000C510C /* tron_grid.png */,
+				4DEC600D1EF3B8280094E3CD /* ConfigViewController.h */,
+				4D5F12081EF39E20000C510C /* ConfigViewController.m */,
+				4DCBF0E51EF4118000DDF979 /* Main.storyboard */,
 				4D48124C1EEA0522007EBA5A /* LaunchScreen.storyboard */,
 				4D48124F1EEA0522007EBA5A /* Info.plist */,
 				4D4812501EEA0522007EBA5A /* main.m */,
 				4D2B85C01EEB33A5000D1CBE /* Plane.h */,
 				4D2B85BE1EEB3386000D1CBE /* Plane.m */,
+				4D5F12011EF34323000C510C /* Cube.h */,
+				4D5F12021EF34368000C510C /* Cube.m */,
+				4D5F12041EF34544000C510C /* CollisionCategory.h */,
+				4D5F12071EF36380000C510C /* PBRMaterial.h */,
+				4D5F12051EF36229000C510C /* PBRMaterial.m */,
+				4DCBF0E01EF40D6800DDF979 /* Config.h */,
+				4DCBF0E11EF40DE000DDF979 /* Config.m */,
+				4DCBF0E71EF4324900DDF979 /* Assets.scnassets */,
 			);
 			path = "arkit-by-example";
 			sourceTree = "<group>";
@@ -136,10 +155,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D5F10521EEC7F40000C510C /* tron_grid.png in Resources */,
+				4DCBF0E61EF411AE00DDF979 /* Main.storyboard in Resources */,
+				4DCBF0E81EF4324900DDF979 /* Assets.scnassets in Resources */,
 				4D48124E1EEA0522007EBA5A /* LaunchScreen.storyboard in Resources */,
-				4D48124B1EEA0522007EBA5A /* Assets.xcassets in Resources */,
-				4D4812491EEA0522007EBA5A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +168,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D5F12031EF34368000C510C /* Cube.m in Sources */,
+				4DCBF0E21EF40DE000DDF979 /* Config.m in Sources */,
+				4D5F12061EF36229000C510C /* PBRMaterial.m in Sources */,
 				4D4812461EEA0522007EBA5A /* ViewController.m in Sources */,
 				4D4812511EEA0522007EBA5A /* main.m in Sources */,
 				4D2B85BF1EEB3386000D1CBE /* Plane.m in Sources */,
+				4D5F12091EF39E20000C510C /* ConfigViewController.m in Sources */,
 				4D4812411EEA0522007EBA5A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -160,14 +182,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4D4812471EEA0522007EBA5A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4D4812481EEA0522007EBA5A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4D48124C1EEA0522007EBA5A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
