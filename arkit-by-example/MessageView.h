@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIkit.h>
+#import <UIKit/UIKit.h>
 
 @interface MessageView : UIVisualEffectView
 - (void)queueMessage: (NSString *)message;
