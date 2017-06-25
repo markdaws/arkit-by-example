@@ -58,4 +58,8 @@ static int currentMaterialIndex = 0;
   return [[PBRMaterial materialNamed:materialName] copy];
 }
 
+- (void) remove {
+  [self removeFromParentNode];
+}
+
 @end

@@ -15,6 +15,7 @@
 - (void)setTextureScale;
 - (void)hide;
 - (void)changeMaterial;
+- (void)remove;
 + (SCNMaterial *)currentMaterial;
 @property (nonatomic,retain) ARPlaneAnchor *anchor;
 @property (nonatomic, retain) SCNBox *planeGeometry;

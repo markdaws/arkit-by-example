@@ -55,6 +55,10 @@ static int currentMaterialIndex = 0;
   return self;
 }
 
+- (void) remove {
+  [self removeFromParentNode];
+}
+
 - (void)changeMaterial {
   // Static, all future cubes use this to have the same material
   currentMaterialIndex = (currentMaterialIndex + 1) % 5;

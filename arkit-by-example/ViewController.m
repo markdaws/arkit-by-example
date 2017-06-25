@@ -20,6 +20,10 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
+  
+  // Used to keep track of the current tracking state of the ARSession
+  self.currentTrackingState = ARTrackingStateNormal;
+  
   [self setupScene];
   [self setupLights];
   [self setupPhysics];
@@ -346,6 +350,16 @@
   }
 }
 
+- (void)refresh {
+  for (NSUUID *planeId in self.planes) {
+    [self.planes[planeId] remove];
+  }
+  for (Cube *cube in self.cubes) {
+    [cube remove];
+  }
+  [self.sceneView.session runWithConfiguration:self.arConfig options:ARSessionRunOptionResetTracking | ARSessionRunOptionRemoveExistingAnchors];
+}
+
 #pragma mark - SCNPhysicsContactDelegate
 
 - (void)physicsWorld:(SCNPhysicsWorld *)world didBeginContact:(SCNPhysicsContact *)contact {
@@ -450,16 +464,66 @@
 //  return nil;
 //}
 
+- (void)showMessage:(NSString *)message {
+  [self.messageViewer queueMessage:message];
+}
+
+- (void)session:(ARSession *)session cameraDidChangeTrackingState:(ARCamera *)camera {
+  ARTrackingState trackingState = camera.trackingState;
+  if (self.currentTrackingState == trackingState) {
+    return;
+  }
+  self.currentTrackingState = trackingState;
+  
+  switch(trackingState) {
+    case ARTrackingStateNotAvailable:
+      [self showMessage:@"Camera tracking is not available on this device"];
+      break;
+      
+    case ARTrackingStateLimited:
+      switch(camera.trackingStateReason) {
+        case ARTrackingStateReasonExcessiveMotion:
+          [self showMessage:@"Limited tracking: slow down the movement of the device"];
+          break;
+          
+        case ARTrackingStateReasonInsufficientFeatures:
+          [self showMessage:@"Limited tracking: too few feature points, view areas with more textures"];
+          break;
+          
+        case ARTrackingStateReasonNone:
+          NSLog(@"Tracking limited none");
+          break;
+      }
+      break;
+      
+    case ARTrackingStateNormal:
+      [self showMessage:@"Tracking is back to normal"];
+      break;
+  }
+}
+
 - (void)session:(ARSession *)session didFailWithError:(NSError *)error {
   // Present an error message to the user
+  [self showMessage:@"session error"];
 }
 
 - (void)sessionWasInterrupted:(ARSession *)session {
-  // Inform the user that the session has been interrupted, for example, by presenting an overlay
+  // Inform the user that the session has been interrupted, for example, by presenting an overlay, or being put in to the background
+  UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Interruption" message:@"The tracking session has been interrupted. The session will be reset once the interruption has completed" preferredStyle:UIAlertControllerStyleAlert];
+  
+  UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+  }];
+  
+  [alert addAction:ok];
+  [self presentViewController:alert animated:YES completion:^{
+  }];
+  
 }
 
 - (void)sessionInterruptionEnded:(ARSession *)session {
   // Reset tracking and/or remove existing anchors if consistent tracking is required
+  [self showMessage:@"Tracking session has been reset due to interruption"];
+  [self refresh];
 }
 
 @end
