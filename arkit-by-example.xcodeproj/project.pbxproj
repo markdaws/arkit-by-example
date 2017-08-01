@@ -14,7 +14,6 @@
 		4D48124B1EEA0522007EBA5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D48124A1EEA0522007EBA5A /* Assets.xcassets */; };
 		4D48124E1EEA0522007EBA5A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D48124C1EEA0522007EBA5A /* LaunchScreen.storyboard */; };
 		4D4812511EEA0522007EBA5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4812501EEA0522007EBA5A /* main.m */; };
-		4D5F10521EEC7F40000C510C /* tron_grid.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D5F10511EEC7F40000C510C /* tron_grid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,7 @@
 		4D48124D1EEA0522007EBA5A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D48124F1EEA0522007EBA5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D4812501EEA0522007EBA5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4D5F10511EEC7F40000C510C /* tron_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tron_grid.png; path = ../../../Desktop/tron_grid.png; sourceTree = "<group>"; };
+		F2E602E21F2F8D1B0055B87E /* tron_grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tron_grid.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +68,7 @@
 				4D4812451EEA0522007EBA5A /* ViewController.m */,
 				4D4812471EEA0522007EBA5A /* Main.storyboard */,
 				4D48124A1EEA0522007EBA5A /* Assets.xcassets */,
-				4D5F10511EEC7F40000C510C /* tron_grid.png */,
+				F2E602E21F2F8D1B0055B87E /* tron_grid.png */,
 				4D48124C1EEA0522007EBA5A /* LaunchScreen.storyboard */,
 				4D48124F1EEA0522007EBA5A /* Info.plist */,
 				4D4812501EEA0522007EBA5A /* main.m */,
@@ -136,7 +135,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D5F10521EEC7F40000C510C /* tron_grid.png in Resources */,
 				4D48124E1EEA0522007EBA5A /* LaunchScreen.storyboard in Resources */,
 				4D48124B1EEA0522007EBA5A /* Assets.xcassets in Resources */,
 				4D4812491EEA0522007EBA5A /* Main.storyboard in Resources */,
