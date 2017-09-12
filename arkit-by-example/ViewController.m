@@ -30,7 +30,7 @@
   [self setupRecognizers];
   
   // Create a ARSession confi object we can re-use
-  self.arConfig = [ARWorldTrackingSessionConfiguration new];
+  self.arConfig = [ARWorldTrackingConfiguration new];
   self.arConfig.lightEstimationEnabled = YES;
   self.arConfig.planeDetection = ARPlaneDetectionHorizontal;
   

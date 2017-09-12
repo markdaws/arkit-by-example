@@ -36,7 +36,7 @@
 @property (nonatomic, retain) NSMutableDictionary<NSUUID *, Plane *> *planes;
 @property (nonatomic, retain) NSMutableArray<Cube *> *cubes;
 @property (nonatomic, retain) Config *config;
-@property (nonatomic, retain) ARWorldTrackingSessionConfiguration *arConfig;
+@property (nonatomic, retain) ARWorldTrackingConfiguration *arConfig;
 @property (weak, nonatomic) IBOutlet MessageView *messageViewer;
 @property (nonatomic) ARTrackingState currentTrackingState;
 
